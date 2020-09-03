@@ -28,10 +28,7 @@ class SelecionarTema extends HTMLElement {
         </div>`;      
         this.appendChild(tema);
     }
-
-    disconnectedCallback() {
-        console.log('Custom square element removed from page.');
-    }
+    
 }
 
 window.customElements.define("tema-seleccionado", SelecionarTema);
