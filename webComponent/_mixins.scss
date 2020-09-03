@@ -1,4 +1,7 @@
 @mixin contentdiv(){
     border-top: 2px solid gray;
     padding-top: 10px;
+    :hover{
+        background-color: rgb(184, 179, 179);
+    }
 }

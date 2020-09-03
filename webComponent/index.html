@@ -6,39 +6,31 @@ layout: home
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Life cycle callbacks test</title>
-    <style>
-      custom-square {
-        margin: 20px;
-      }
-    </style>
-    <script defer src="./assets/js/webcomponent.js"></script>
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"></style>
   </head>
+
   <body>
-
-    <h1>Life cycle callbacks test</h1>
-
-    <div>
-      <button class="add">Seleccionar</button>
-      <button class="remove">Remove custom-square from DOM</button>
-    </div>
-
-    <div class="contenedor">
+      <div class="contenedor">
         {% for tema in site.character limit: 4%}
           <div class="contenido">
             <div class="subcontainer1">
-              <img class="img" src="{{tema.image}}">
-              <h2 class="subtitulo">{{tema.title}}</h2>
-            </div>
-            <div class="subcontainer2">
-              <p class="texto">{{tema.description}}</p>
-            </div>
-            <div class="subcontainer3">
-              <a class="ref" href="{{tema.link}}}">Enlace a otra página</a>
-            </div>
+              <tema-seleccionado onclick="selecionarTema('{{tema.title}}')" 
+                title="{{tema.title}}"
+                img="{{tema.image}}"
+                description="{{tema.description}}"
+                link="{{tema.link}}"
+              ></tema-seleccionado>            
+            </div>          
           </div>
         {% endfor %}
       </div>
 
+      <div id="eleccion">
+        <p id="selecionar-tema"> Seleccione un tema </p>
+      </div>
   </body>
+
+  <script defer src="./assets/js/webcomponent.js"></script>
+
 </html>
