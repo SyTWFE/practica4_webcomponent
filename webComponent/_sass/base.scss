@@ -1,0 +1,46 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+.contenedor{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contenido{
+    width:20%;
+    float:left;
+    margin: 10px;
+    border: 4px solid purple;
+}
+
+.img{
+    display:block;
+    margin:auto;
+}
+.subtitulo{
+    color: black;
+    text-shadow: black 2px 2px 4px;
+    font-weight: normal;
+    font-size: 35px;
+    font-family: $base-font-family;
+    text-transform: uppercase;
+    text-align: center;
+    }
+
+.texto{
+    font-weight: normal;
+    font-size: 20px;
+    margin: auto;
+    font-family: $base-font-family;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+@for $i from 1 through 3{
+    .#{subcontainer}#{$i}{
+        @include contentdiv
+    }
+}
